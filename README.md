@@ -45,7 +45,7 @@ This class caches calls to time getters. This cache is flushed in two ways:
 
 Pros and cons
 =============
-:smile: Works accurate enough when you don't have long blocking code.
-:smile: Works accurate enough when you have long blocking code but calculate time often enough (at 100K/sec rate).
-:sweat_smile: Can work inaccurate when you have long blocking code with time calculations at lower rates. Just pass the required `rate` for this case `rate` for improving accuracy. :smile:
-:smile: You can use higher rates to trade accuracy for performance.
+ * :smile: Works accurate enough when you don't have long blocking code.
+ * :smile: Works accurate enough when you have long blocking code but calculate time often enough (at 100K/sec rate).
+ * :sweat_smile: Can work inaccurate when you have long blocking code with time calculations at lower rates. Just pass the required `rate` for this case for improving accuracy. :smile:
+ * :smile: You can use higher rates to trade accuracy for performance.
