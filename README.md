@@ -40,8 +40,8 @@ console.log(t.get());
 Principles
 ==========
 This class caches calls to time getters. This cache is flushed in two ways:
- * Each 100 iteration (by default) during blocking code.
- * Every millisecond using setTimeout(..., 1) for .
+ * Every 100th iteration (by default) during blocking code.
+ * Every millisecond using setTimeout(..., 1).
 
 Pros and cons
 =============
