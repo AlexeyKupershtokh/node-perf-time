@@ -15,6 +15,12 @@
     "time",
     "performance"
   ],
+  "devDependencies": {
+    "benchmark": ">0"
+  },
+  "optionalDependencies": {
+    "microtime": ">0"
+  },
   "author": "Alexey Kupershtokh",
   "license": "BSD"
 }

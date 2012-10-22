@@ -1,4 +1,8 @@
-var microtime = require('microtime');
+try {
+  var microtime = require('microtime');
+} catch(e) {
+  console.error('microtime package not found, will skip it in benchmark');
+}
 var Benchmark = require('benchmark').Benchmark;
 
 var perfTime = require('..');
