@@ -24,17 +24,19 @@ npm install perf-time
 Usage
 =====
 ```javascript
+var perfTime = require('perf-time');
+
 var t = new perfTime();
-console.log(t.get());
+console.log(t.get()); // outputs: 1350895024399
 
 // set custom rate
 var t = new perfTime(10000);
-console.log(t.get());
+console.log(t.get()); // outputs: 1350895024403
 
 // set custom provider instead of default Date.now()
 var provider = function() { return (new Date).getMilliseconds(); };
 var t = new perfTime(provider);
-console.log(t.get());
+console.log(t.get()); // outputs 403
 ```
 
 Principles
