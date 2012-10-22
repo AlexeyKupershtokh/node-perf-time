@@ -4,10 +4,48 @@ node-perf-time
 Low impact date/time getters.
 
 ```
-+new Date x 407,163 ops/sec ±1.22% (88 runs sampled)
-Date.now() x 489,213 ops/sec ±1.22% (85 runs sampled)
-process.hrtime() x 338,222 ops/sec ±0.86% (85 runs sampled)
-microtime.now() x 448,378 ops/sec ±1.14% (89 runs sampled)
-perfTime.get() x 17,290,252 ops/sec ±1.27% (89 runs sampled)
-Fastest is perfTime.get()
++new Date               x  1,106,626 ops/sec ±0.80% (99 runs sampled)
+Date.now()              x  1,418,551 ops/sec ±0.16% (101 runs sampled)
+process.hrtime()        x    833,820 ops/sec ±0.16% (101 runs sampled)
+microtime.now()         x  1,247,487 ops/sec ±1.03% (100 runs sampled)
+perfTime(1000000).get() x 24,040,578 ops/sec ±1.85% (85 runs sampled)
+perfTime(100000).get()  x 18,311,654 ops/sec ±0.51% (93 runs sampled)
+perfTime(10000).get()   x  8,393,439 ops/sec ±0.37% (97 runs sampled)
+perfTime(2000).get()    x  3,362,967 ops/sec ±0.30% (100 runs sampled)
+perfTime(900).get()     x  1,375,311 ops/sec ±0.17% (101 runs sampled)
 ```
+
+Installation
+============
+```
+npm install perf-time
+```
+
+Usage
+=====
+```javascript
+var t = new perfTime();
+console.log(t.get());
+
+// set custom rate
+var t = new perfTime(10000);
+console.log(t.get());
+
+// set custom provider instead of default Date.now()
+var provider = function() { return (new Date).getMilliseconds(); };
+var t = new perfTime(provider);
+console.log(t.get());
+```
+
+Principles
+==========
+This class caches calls to time getters. This cache is flushed in two ways:
+ * Each 100 iteration (by default) during blocking code.
+ * Every millisecond using setTimeout(..., 1) for .
+
+Pros and cons
+=============
+:smile: Works accurate enough when you don't have long blocking code.
+:smile: Works accurate enough when you have long blocking code but calculate time often enough (at 100K/sec rate).
+:sweat_smile: Can work inaccurate when you have long blocking code with time calculations at lower rates. Just pass the required `rate` for this case `rate` for improving accuracy. :smile:
+:smile: You can use higher rates to trade accuracy for performance.
