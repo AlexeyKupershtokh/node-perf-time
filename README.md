@@ -49,5 +49,6 @@ Pros and cons
 =============
  * :smile: Works accurate enough when you don't have long blocking code.
  * :smile: Works accurate enough when you have long blocking code but calculate time often enough (at 100K/sec rate).
- * :sweat_smile: Can work inaccurate when you have long blocking code with time calculations at lower rates. Just pass the required `rate` for this case for improving accuracy. :smile:
+ * :sweat: Can work inaccurate when you have long blocking code with time calculations at lower rates. Just pass the required `rate` for this case for improving accuracy.
  * :smile: You can use higher rates to trade accuracy for performance.
+ * :cold_sweat: Garbage collection in node.js can take hundreds of milliseconds and is executed synchronously. Therefore it will make perf-time usually stale after gc till next cache flushing.
