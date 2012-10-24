@@ -28,6 +28,9 @@ suite.add('warmup', function() {
 .add('process.hrtime()', function() {
   var d = process.hrtime();
 })
+.add('process.uptime()', function() {
+  var d = process.uptime();
+})
 .add('microtime.now()', function() {
   var d = microtime.now();
 })
