@@ -1,4 +1,4 @@
-var setTimeout = require('./timers_0.8.12').setTimeout;
+var setTimeout = require('./timers_0.9.2.my').setTimeout;
 
 console.log("wait...");
 var done = 0;
