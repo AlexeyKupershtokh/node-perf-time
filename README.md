@@ -14,6 +14,7 @@ perfTime(10000).get()   x  8,393,439 ops/sec ±0.37% (97 runs sampled)
 perfTime(2000).get()    x  3,362,967 ops/sec ±0.30% (100 runs sampled)
 perfTime(900).get()     x  1,375,311 ops/sec ±0.17% (101 runs sampled)
 ```
+<img src="http://habrastorage.org/storage2/f84/92b/b26/f8492bb26f5490dce97369185c51234d.jpg"/>
 
 Installation
 ============
@@ -41,8 +42,6 @@ console.log(t.get()); // outputs 403
 
 Principles
 ==========
-<img src="http://habrastorage.org/storage2/f84/92b/b26/f8492bb26f5490dce97369185c51234d.jpg"/>
-
 This class caches calls to time getters. This cache is flushed in two ways:
  * Every 100th iteration (by default) during blocking code.
  * Every millisecond using setTimeout(..., 1).
