@@ -7,6 +7,7 @@ Low impact date/time getters.
 +new Date               x  1,106,626 ops/sec ±0.80% (99 runs sampled)
 Date.now()              x  1,418,551 ops/sec ±0.16% (101 runs sampled)
 process.hrtime()        x    833,820 ops/sec ±0.16% (101 runs sampled)
+process.uptime()        x  1,244,217 ops/sec ±0.24% (100 runs sampled)
 microtime.now()         x  1,247,487 ops/sec ±1.03% (100 runs sampled)
 perfTime(1000000).get() x 24,040,578 ops/sec ±1.85% (85 runs sampled)
 perfTime(100000).get()  x 18,311,654 ops/sec ±0.51% (93 runs sampled)
