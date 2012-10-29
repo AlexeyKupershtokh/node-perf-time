@@ -1,3 +1,5 @@
+:bangbang: Warning: Usually Date.now() works quite fast (~10,000,000 ops/sec) and you don't need this module. But on some systems like in my case (Ubuntu 12.04 32 bit + pae) it works 15-20 times slower than it should have. I recommend upgrading your system but if you can't than this module can be useful for you.
+
 node-perf-time
 ==============
 
