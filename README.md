@@ -1,4 +1,4 @@
-:bangbang: Warning: Usually Date.now() works quite fast (~10,000,000 ops/sec) and you don't need this module. But on some systems like in my case (Ubuntu 12.04 32 bit + pae) it works 15-20 times slower than it should have. I recommend upgrading your system but if you can't than this module can be useful for you.
+:bangbang: Warning: Usually Date.now() works quite fast (> 10,000,000 ops/sec) and you don't need this module. But in some systems like in my case (Ubuntu 12.04 32 bit + pae) it works 15-20 times slower than it should. I recommend upgrading your system but if you can't than this module can be useful for you. This is a system-wide problem so you can check your <a href="http://jsperf.com/new-date-value/9">Date.now() performanice</a> in a browser (FF or Chrome) and the node's Date.now() will likely show the same results. :bangbang:
 
 node-perf-time
 ==============
